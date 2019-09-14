@@ -1,0 +1,1 @@
+2> & 1 command redirects to standard output

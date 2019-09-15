@@ -1,2 +1,2 @@
 #!/bin/bash
-ls -lt | tail  | less   
+ls -lt | tail | cut -d  -f 9 | less

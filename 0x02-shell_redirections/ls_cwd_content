@@ -1,0 +1,20 @@
+total 72
+drwxrwxr-x 2 vagrant vagrant  4096 Sep 15 00:49 .
+lrwxrwxrwx 1 vagrant vagrant    48 Sep 15 00:06 .#7-file -> vagrant@vagrant-ubuntu-trusty-64.3972:1568491553
+drwxrwxr-x 6 vagrant vagrant  4096 Sep 14 11:19 ..
+-rw-r--r-- 1 vagrant vagrant 12288 Sep 14 17:34 .1-confused_smiley.swp
+-rwxrw-r-- 1 vagrant vagrant    31 Sep 14 16:25 0-hello_world
+-rwxrw-r-- 1 vagrant vagrant    28 Sep 14 17:26 1-confused_smiley
+-rwxrw-r-- 1 vagrant vagrant    27 Sep 14 20:37 2-hellofile
+-rwxrw-r-- 1 vagrant vagrant    38 Sep 14 20:41 3-twofiles
+-rwxrw-r-- 1 vagrant vagrant    29 Sep 14 20:49 4-lastline
+-rwxrw-r-- 1 vagrant vagrant    28 Sep 14 20:53 5-firstlines
+-rwxrw-r-- 1 vagrant vagrant    43 Sep 14 22:46 6-third_line
+-rwxrw-r-- 1 vagrant vagrant    63 Sep 14 23:52 7-file
+-rwxrw-r-- 1 vagrant vagrant    36 Sep 15 00:27 8-cwd_state
+-rwxrw-r-- 1 vagrant vagrant    58 Sep 15 00:19 8-cwd_state~
+-rw-rw-r-- 1 vagrant vagrant    34 Sep 15 00:49 9-duplicate_last_line
+-rw-rw-r-- 1 vagrant vagrant    43 Sep 14 11:23 README.md
+-rw-rw-r-- 1 vagrant vagrant     0 Sep 14 23:17 \*\'Holberton
+-rw-rw-r-- 1 vagrant vagrant   969 Sep 14 22:49 iacta
+-rw-rw-r-- 1 vagrant vagrant     0 Sep 15 00:49 ls_cwd_content

@@ -1,2 +1,2 @@
-#!/bin/bash
-echo "$PATH"printev | ls | wc -l
+#!/bin/bash 
+echo $PATH tr -s | wc -l 

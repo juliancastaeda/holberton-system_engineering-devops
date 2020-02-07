@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+# This script is displaying "Holberton School" 10 times
+i=0
+j=9
+until [ $j -lt $i ]
+do
+  echo 'Holberton School'
+  ((i++))
+done

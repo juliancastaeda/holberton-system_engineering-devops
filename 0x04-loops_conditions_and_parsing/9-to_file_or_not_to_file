@@ -1,0 +1,20 @@
+#!/usr/bin/env bash
+# This script is displaying "Holberton School" 10 times
+device="holbertonschool"
+if [[ -e $device ]]
+then
+    echo "$device file exists"
+    if [[ ! -s $device ]]
+	then
+	echo "$device file is empty"
+    elif [[ -s $device ]]
+	then
+	echo "$device file is not empty"
+    fi
+    if [[ -f $device ]]
+	then
+	echo "$device is a regular file"
+    fi
+else
+    echo "$device file does not exist"
+fi

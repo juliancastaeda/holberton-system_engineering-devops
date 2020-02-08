@@ -1,10 +1,10 @@
 #!/usr/bin/env bash
 # This script is displaying "Holberton School" 10 times
 i=0
-while ((i<=9))
+while [[ i -le 9 ]]
 do
     echo 'Holberton School' 
-      if ((i==8))
+      if [[ i -eq 8 ]]
       then
 	  echo 'Hi'
       fi

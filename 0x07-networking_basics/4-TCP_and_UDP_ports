@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+#Escriba un script Bash que muestre puertos de escucha
+netstat -lp 2>/dev/null

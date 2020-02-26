@@ -1,9 +1,9 @@
 #!/usr/bin/env bash
 #ping
 var=$1
-if [ $var ];
+if [ "$var" ];
 then
-    exec ping -c 5 $var
+    ping -c 5 "$var"
 else
     echo "Usage: 5-is_the_host_on_the_network {IP_ADDRESS}"
-fi    
+fi

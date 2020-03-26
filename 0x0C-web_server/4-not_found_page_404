@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+#
+sudo apt-get update
+sudo apt-get -y install nginx
+echo "Ceci n'est pas une page" | sudo tee -a /usr/share/nginx/html/terror_404.html
+sudo sed -i "46i \\\terror_page 404 /terror_404.html;\n\tlocation = /terror_404.html {\n\t\troot /usr/share/nginx/html;\n\t\tinternal;\n\t}" /etc/nginx/sites-enabled/default
+sudo service nginx restart

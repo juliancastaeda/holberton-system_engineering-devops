@@ -1,3 +1,14 @@
 #!/usr/bin/env bash
 #
-dig www.esternocleidomastoideo.tech | grep -A1 'ANSWER SECTION:' | awk '{print $5}';
+text="esternocleidomastoideo.tech"
+SUBDOMAIN=("www" "lb-01" "web-01" "web-02")
+if [ $1 = $text ] && [ "$#" = "1" ]; then
+    for SUB in "${SUBDOMAIN[@]}"
+    do
+	dig $SUB.$1 | grep -A1 'ANSWER SECTION:' | awk 'END{print "The subdomain " "'$SUB'" " is",$4,"record and points to",$5}'
+    done
+fi    
+if [ "$#" = "2" ]; then
+    dig $2.$1 | grep -A1 'ANSWER SECTION:' | awk 'END{print "The subdomain " "'$2'" " is",$4,"record and points to",$5}'
+fi
+

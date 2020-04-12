@@ -1,0 +1,8 @@
+listen ServidorWeb
+    bind 54.227.76.97:443 ssl /etc/ssl/certs/haproxy.pen
+    mode http
+    stats enable
+    stats auth  cda:cda
+    balance roundrobin
+    server 1277-web-01 35.196.87.82:80 check weight 50
+    server 1277-web-02 54.146.203.53:80 check weight 50

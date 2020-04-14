@@ -14,8 +14,8 @@ global
 
         # Default ciphers to use on SSL-enabled listening sockets.
         # For more information, see ciphers(1SSL). This list is from:
-        #  https://hynek.me/articles/hardening-your-web-servers-ssl-cip$
-        ssl-default-bind-ciphers ECDH+AESGCM:DH+AESGCM:ECDH+AES256:DH+A$
+        #  https://hynek.me/articles/hardening-your-web-servers-ssl-ci$
+        ssl-default-bind-ciphers ECDH+AESGCM:DH+AESGCM:ECDH+AES256:DH+$
         ssl-default-bind-options no-sslv3
 
 defaults
@@ -29,26 +29,24 @@ defaults
         errorfile 400 /etc/haproxy/errors/400.http
         errorfile 403 /etc/haproxy/errors/403.http
         errorfile 408 /etc/haproxy/errors/408.http
-	errorfile 500 /etc/haproxy/errors/500.http
+        errorfile 500 /etc/haproxy/errors/500.http
         errorfile 502 /etc/haproxy/errors/502.http
-        errorfile 503 /etc/haproxy/errors/503.http
+	errorfile 503 /etc/haproxy/errors/503.http
         errorfile 504 /etc/haproxy/errors/504.http
 
 frontend haproxy
         bind *:80
-        # This is our new config that listens on port 443 for SSL conne$
-        bind *:443 ssl crt /etc/ssl/www.esternocleidomastoideo.tech/www$
-        # Test URI to see if its a letsencrypt request
+        bind *:443 ssl crt /etc/ssl/www.esternocleidomastoideo.tech/ww$
+        redirect scheme https code 301 if !{ ssl_fc }
         acl letsencrypt-acl path_beg /.well-known/acme-challenge/
         use_backend letsencrypt-backend if letsencrypt-acl
-        mode tcp
-        default_backend WEBSERVERS
+        default_backend SERVER-WEB
 
- LE Backend
 backend letsencrypt-backend
         server letsencrypt 127.0.0.1:8888
 
-backend WEBSERVERS
+backend SERVER-WEB
         balance roundrobin
-        server 1277-web-01 35.196.87.82:80 check weight 50
-        server 1277-web-02 54.146.203.53:80 check weight 50
+        server 1277-web-01 35.196.87.82:80 check
+        server 1277-web-02 54.146.203.53:80 check
+

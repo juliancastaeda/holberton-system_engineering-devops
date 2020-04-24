@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+#
+dt=$(date +%d-%m-%Y)
+mysqldump -u root -p betty --all-databases > backup.sql
+tar -czvf $dt.tar.gz backup.sql

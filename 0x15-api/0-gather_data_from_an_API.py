@@ -20,4 +20,4 @@ print('Employee {} is done with tasks({}/{}):'
       .format(jsonRes_1['name'], lentitles, lenresponse_2))
 
 for tit in titles:
-    print('\t{}'.format(tit))
+    print('\t {}'.format(tit))

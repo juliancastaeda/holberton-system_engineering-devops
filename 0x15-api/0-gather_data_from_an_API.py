@@ -4,14 +4,14 @@
 import requests
 import sys
 
-if __name__ == " __main__":
+if __name__ == "__main__":
     
     names_ = sys.argv[1]
     url = 'https://jsonplaceholder.typicode.com/users/{}'.format(names_)
     response_1 = requests.get(url)
     jsonRes_1 = response_1.json()
     url = 'https://jsonplaceholder.typicode.com/todos'
-    response_2 = requests.get(url, params={'userId': argv[1]}).json()
+    response_2 = requests.get(url, params={'userId': sys.argv[1]}).json()
     titles = []
 
     for compl in response_2:

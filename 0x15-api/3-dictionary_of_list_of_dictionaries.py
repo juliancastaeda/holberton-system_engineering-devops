@@ -21,4 +21,4 @@ if __name__ == "__main__":
         res[key.get('id')] = titles
     file = 'todo_all_employees' + '.json'
     with open(file, mode='w') as fil:
-        json.dump(re<s, fil)
+        json.dump(res, fil)

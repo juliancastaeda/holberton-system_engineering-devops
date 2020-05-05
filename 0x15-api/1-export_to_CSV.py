@@ -15,7 +15,7 @@ if __name__ == "__main__":
     response_2 = requests.get(url, params={'userId': sys.argv[1]}).json()
     with open('{}.csv'.format(names_), 'w') as csvfile:
         writer = csv.writer(csvfile, delimiter=',',
-               quoting=csv.QUOTE_ALL)
+                            quoting=csv.QUOTE_ALL)
         for compl in response_2:
             writer.writerow([names_, jsonRes_1.get('username'),
                              compl.get('completed'), compl.get('title')])

@@ -12,7 +12,7 @@ if __name__ == "__main__":
     response_1 = requests.get(url)
     jsonRes_1 = response_1.json()
     url = 'https://jsonplaceholder.typicode.com/todos'
-    response_2 = requests.get(url, params={'userId': sys.argv[1]}).json()
+    response_2 = requests.get(url, params={'userId': names_}).json()
     with open('{}.csv'.format(names_), 'w') as csvfile:
         writer = csv.writer(csvfile, delimiter=',',
                             quoting=csv.QUOTE_ALL)

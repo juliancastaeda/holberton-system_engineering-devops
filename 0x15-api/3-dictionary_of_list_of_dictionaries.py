@@ -7,7 +7,7 @@ import json
 
 if __name__ == "__main__":
 
-    url_1 = requests.get('https://jsonplaceholder.typicode.com/users/{}').json()
+    url_1 = requests.get('https://jsonplaceholder.typicode.com/users').json()
     url_2 = requests.get('https://jsonplaceholder.typicode.com/todos').json()
     res = {}
     for key in url_1:
@@ -18,7 +18,7 @@ if __name__ == "__main__":
                             "titles": compl.get('title'),
                             "completed": compl.get('completed')}
                 titles.append(new_json)
-        res[key.get('id')] = title
+        res[key.get('id')] = titles
     file = 'todo_all_employees' + '.json'
     with open(file, mode='w') as fil:
         json.dump(res, fil)

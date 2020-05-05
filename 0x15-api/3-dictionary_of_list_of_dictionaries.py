@@ -15,10 +15,10 @@ if __name__ == "__main__":
         for compl in url_2:
             if compl.get('userId') == key.get('id'):
                 new_json = {"username": key.get('username'),
-                            "titles": compl.get('title'),
+                            "task": compl.get('title'),
                             "completed": compl.get('completed')}
                 titles.append(new_json)
         res[key.get('id')] = titles
     file = 'todo_all_employees' + '.json'
     with open(file, mode='w') as fil:
-        json.dump(res, fil)
+        json.dump(re<s, fil)

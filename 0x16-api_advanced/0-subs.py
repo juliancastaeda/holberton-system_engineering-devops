@@ -1,16 +1,17 @@
 #!/usr/bin/python3
 """
-
 """
-import json
 import requests
 
 
 def number_of_subscribers(subreddit):
-    subscribers = requests.get('https://www.reddit.com/r/{}/about.json'.
-                               format(subreddit),
-                               headers={"User-Agent": "X-Modhash"},
-                               allow_redirects=False)
-    if subscribers.status_code != 200:
+    """
+    """
+    url = 'https://www.reddit.com/r/{}/about.json'
+    headers = {'user-agent': 'X-Modhash'}
+    url_format = requests.get(url.format(subreddit), headers=headers).json()
+    try:
+        name = url_format['data']['subscribers']
+        return name
+    except:
         return 0
-    return subscribers.json().get("data").get("subscribers")
